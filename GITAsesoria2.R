@@ -1,4 +1,4 @@
-###Scrapping
+###Scrapping: Manera de poder jalar contenido de internet sin tener que descargarlo.
 
 linkPage= "https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic"
 linkPath = '//*[@id="thetable"]'
@@ -23,14 +23,16 @@ names (coronavirus)
 coronavirus = coronavirus[-c(229:230),]
 View(coronavirus)
 
-###Algo m?s de limpieza para el valor â???"
+###Algo mas de limpieza para el valor ????"
 
 library(dplyr)
 coronavirus = coronavirus %>% 
-  mutate(Recuperados = replace(Recuperados, Recuperados == 'â???"', NA))
+  mutate(Recuperados = replace(Recuperados, Recuperados == '????"', NA))
 
 View(coronavirus)
 
-###Análisis
+###Analisis
 
 str(coronavirus)
+
+####Comentario 15 de abril
